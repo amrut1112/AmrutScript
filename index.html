@@ -5,102 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- ✅ Favicon link added here -->
     <link rel="icon" type="image/png" href="/favicon.ico"/>
-    <title>AI Script Generator - Create Engaging Video Scripts</title>
+    <title>AI Script Generator</title>
     <meta name="description" content="Instantly generate engaging scripts for videos, ads, YouTube, and more with our AI Script Generator. Fast, creative, and tailored to your needs."/>
     <meta name="author" content="SmartTech" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://smarthubelectronics.com" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://smarthubelectronics.com" />
-    <meta property="og:title" content="AI Script Generator - Create Engaging Video Scripts" />
+    <meta property="og:title" content="AI Script Generator" />
     <meta property="og:description" content="Create high-converting scripts with AI-powered precision" />
+    <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:title" content="AI Script Generator - Create Engaging Video Scripts" />
-    <meta name="twitter:description" content="Create high-converting scripts with AI-powered precision" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <!-- Preconnect to required origins -->
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.gpteng.co" crossorigin />
-    
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/src/main.tsx" as="script" />
-    
-    <!-- Defer non-critical JavaScript -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8922938118624975"
      crossorigin="anonymous"></script>
     <style>
-      /* Critical CSS */
+      /* Hide empty AdSense containers to prevent spacing */
       .adsbygoogle:empty {
         display: none !important;
-      }
-      /* Ensure text remains visible during webfont loads */
-      .wf-loading {
-        visibility: hidden;
-      }
-      .wf-active {
-        visibility: visible;
       }
     </style>
   </head>
 
   <body>
-    <main id="root" role="main">
-      <!-- ad1 -->
-      <ins class="adsbygoogle"
-           style="display:block; width: 100%; min-width: 300px; min-height: 250px;"
-           data-ad-client="ca-pub-8922938118624975"
-           data-ad-slot="2032368983"
-           data-ad-format="auto"
-           data-full-width-responsive="true"
-           aria-label="Advertisement"></ins>
-      <script>
-        // Use passive event listeners for better scrolling performance
-        window.addEventListener('load', function() {
-          function loadAdWhenReady() {
-            var ad = document.querySelector('.adsbygoogle');
-            if (ad && ad.offsetWidth > 0) {
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            } else {
-              setTimeout(loadAdWhenReady, 100);
-            }
-          }
-          loadAdWhenReady();
-          
-          // Hide ad container if no ad is loaded after 2 seconds
-          setTimeout(function() {
-            var ad = document.querySelector('.adsbygoogle');
-            if (ad && ad.innerHTML.trim() === "") {
-              ad.style.display = 'none';
-            }
-          }, 2000);
-        }, { passive: true });
-      </script>
-    </main>
     
-    <!-- Defer non-critical scripts -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module" defer></script>
-    <script type="module" src="/src/main.tsx" defer></script>
-    
-    <!-- Register Service Worker -->
+    <!-- ad1 -->
+    <ins class="adsbygoogle"
+         style="display:block; width: 100%; min-width: 300px; min-height: 250px;"
+         data-ad-client="ca-pub-8922938118624975"
+         data-ad-slot="2032368983"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-              console.log('ServiceWorker registration successful');
-            })
-            .catch(err => {
-              console.log('ServiceWorker registration failed: ', err);
-            });
-        });
+      function loadAdWhenReady() {
+        var ad = document.querySelector('.adsbygoogle');
+        if (ad && ad.offsetWidth > 0) {
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        } else {
+          setTimeout(loadAdWhenReady, 100);
+        }
       }
+      window.addEventListener('load', loadAdWhenReady);
+      // Hide ad container if no ad is loaded after 2 seconds
+      setTimeout(function() {
+        var ad = document.querySelector('.adsbygoogle');
+        if (ad && ad.innerHTML.trim() === "") {
+          ad.style.display = 'none';
+        }
+      }, 2000);
     </script>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
