@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- ✅ Favicon link added here -->
-    <link rel="icon" type="image/png" href="C:\Users\anshs\Downloads\AiscriptGenerator\public\favicon.ico"/>
+    <link rel="icon" type="image/png" href="/favicon.ico"/>
     <title>AI Script Generator</title>
-    <meta name="description" content= "Instantly generate engaging scripts for videos, ads, YouTube, and more with our AI Script Generator. Fast, creative, and tailored to your needs."/>
+    <meta name="description" content="Instantly generate engaging scripts for videos, ads, YouTube, and more with our AI Script Generator. Fast, creative, and tailored to your needs."/>
     <meta name="author" content="SmartTech" />
 
     <meta property="og:title" content="AI Script Generator" />
@@ -31,20 +31,28 @@
     
     <!-- ad1 -->
     <ins class="adsbygoogle"
-         style="display:block"
+         style="display:block; width: 100%; min-width: 300px; min-height: 250px;"
          data-ad-client="ca-pub-8922938118624975"
          data-ad-slot="2032368983"
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-         // Hide ad container if no ad is loaded after 2 seconds
-         setTimeout(function() {
-           var ad = document.querySelector('.adsbygoogle');
-           if (ad && ad.innerHTML.trim() === "") {
-             ad.style.display = 'none';
-           }
-         }, 2000);
+      function loadAdWhenReady() {
+        var ad = document.querySelector('.adsbygoogle');
+        if (ad && ad.offsetWidth > 0) {
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        } else {
+          setTimeout(loadAdWhenReady, 100);
+        }
+      }
+      window.addEventListener('load', loadAdWhenReady);
+      // Hide ad container if no ad is loaded after 2 seconds
+      setTimeout(function() {
+        var ad = document.querySelector('.adsbygoogle');
+        if (ad && ad.innerHTML.trim() === "") {
+          ad.style.display = 'none';
+        }
+      }, 2000);
     </script>
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
